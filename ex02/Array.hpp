@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/14 22:44:04 by nuno              #+#    #+#             */
-/*   Updated: 2024/03/17 11:30:49 by nuno             ###   ########.fr       */
+/*   Created: 2024/03/17 11:29:01 by nuno              #+#    #+#             */
+/*   Updated: 2024/03/18 19:02:47 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 # include <iostream>
+# include "Array.tpp"
 
 template <typename T>
-void print(T element) {
-	std::cout << element << "   ";
-}
+class Array {
+	private:
+		T *_array;
+		unsigned int _size;
 
-template <typename T>
-void iter (T *str, size_t len, void f(T element)) {
-	size_t i = 0;
-	while (str && i < len)
-		f(str[i++]);
-}
+	public:
+		Array(void);
+		Array(unsigned int n);
+		Array(const Array &src);
+		Array& operator = (const Array &src);
+		~Array(void);
+		//Getters
+		unsigned int getSize(void) const;
+};
+
 #endif

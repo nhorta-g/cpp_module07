@@ -6,15 +6,16 @@
 #    By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/16 18:55:25 by nuno              #+#    #+#              #
-#    Updated: 2024/03/16 18:55:26 by nuno             ###   ########.fr        #
+#    Updated: 2024/03/18 19:13:10 by nuno             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	iter
+NAME		=	Array
 
 CXX			=	c++
 
-SRCS		=	main.cpp
+SRCS		=	Array.tpp \
+				main.cpp
 
 CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98 #-fsanitize=address
 
