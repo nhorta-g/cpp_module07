@@ -6,7 +6,7 @@
 /*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 11:29:01 by nuno              #+#    #+#             */
-/*   Updated: 2024/03/18 19:02:47 by nuno             ###   ########.fr       */
+/*   Updated: 2024/03/20 15:10:51 by nuno             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 # define ARRAY_HPP
 
 # include <iostream>
-# include "Array.tpp"
+# include <cstdlib>
+# include <exception>
 
 template <typename T>
 class Array {
@@ -28,8 +29,21 @@ class Array {
 		Array(const Array &src);
 		Array& operator = (const Array &src);
 		~Array(void);
+
+		//Operator
+		T& operator [] (unsigned int index);
+
 		//Getters
-		unsigned int getSize(void) const;
+		unsigned int size(void) const;
+
+		//Exepcion class
+		class OutOfBound : public std::exception {
+			public:
+				const char* what() const throw() {
+					return ("Index is out of bounds");
+				}
+		};
 };
 
+# include "Array.tpp"
 #endif
