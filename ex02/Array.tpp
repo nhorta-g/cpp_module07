@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.tpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nhorta-g <nhorta-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 08:44:37 by nuno              #+#    #+#             */
-/*   Updated: 2024/03/20 14:50:04 by nuno             ###   ########.fr       */
+/*   Updated: 2024/03/30 19:47:04 by nhorta-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ Array<T> &Array<T>::operator = (const Array &src) {
 	std::cout << "Assignement operator constructor called." << std::endl;
 	if (&src != this) {
 		delete[] _array;
+		
 		_size = src._size;
 		_array = new T[src._size];
 		for (unsigned int i = 0; i < src._size; i++) {

@@ -1,23 +1,12 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/17 11:29:06 by nuno              #+#    #+#             */
-/*   Updated: 2024/03/20 15:42:26 by nuno             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
+#include <iostream>
 #include "Array.hpp"
 
 #define MAX_VAL 750
-int main(void)
+int main(int, char**)
 {
 	Array<int> numbers(MAX_VAL);
 	int* mirror = new int[MAX_VAL];
-	srand(time(0));
+	srand(time(NULL));
 
 	for (int i = 0; i < MAX_VAL; i++)
 	{
@@ -32,7 +21,7 @@ int main(void)
 		Array<int> test(tmp);
 	}
 
-	for (int i = 0; i < MAX_VAL; i++)/**/
+	for (int i = 0; i < MAX_VAL; i++)
 	{
 		if (mirror[i] != numbers[i])
 		{
@@ -40,8 +29,6 @@ int main(void)
 			return 1;
 		}
 	}
-	std::cout << "Success: mirror and numbers are equal" << std::endl << std::endl;
-	std::cout << "Index 42:\nnumbers: " << numbers[42] << "\nmirror: " << mirror[42] << std::endl;
 	try
 	{
 		numbers[-2] = 0;
@@ -58,13 +45,11 @@ int main(void)
 	{
 		std::cerr << e.what() << '\n';
 	}
+
 	for (int i = 0; i < MAX_VAL; i++)
 	{
 		numbers[i] = rand();
 	}
-
-	std::cout << "After changing numbers:\nIndex 42:\nnumbers: " << numbers[42] << "\nmirror: " << mirror[42] << std::endl;
-
 	delete [] mirror;
 	return 0;
 }

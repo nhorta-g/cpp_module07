@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nuno <nuno@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: nhorta-g <nhorta-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/14 22:44:04 by nuno              #+#    #+#             */
-/*   Updated: 2024/03/17 11:30:49 by nuno             ###   ########.fr       */
+/*   Updated: 2024/03/30 19:33:05 by nhorta-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void print(T element) {
 
 template <typename T>
 void iter (T *str, size_t len, void f(T element)) {
-	size_t i = 0;
-	while (str && i < len)
-		f(str[i++]);
+	for (size_t i = 0; i < len; ++i) {
+		f(str[i]);
+	}
 }
 #endif
